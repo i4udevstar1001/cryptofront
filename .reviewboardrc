@@ -1,0 +1,5 @@
+REVIEWBOARD_URL = 'http://review.cryptoaces.club:80/'
+REPOSITORY = 'app-frontend-main'
+
+EXCLUDE_PATTERNS = ['yarn.lock', 'package-lock.json']
+

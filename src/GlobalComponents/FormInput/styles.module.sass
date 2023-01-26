@@ -1,0 +1,51 @@
+@import '/src/variables'
+.container 
+  width: 100% 
+  height: 40px 
+  display: flex 
+  justify-content: space-between
+  margin: 16px 0 
+.svgContainer 
+  border: 1px solid #122645
+  border-radius: 10px
+  width: 45px
+  height: 40px
+  display: flex 
+  justify-content: center
+  align-items: center
+.inputContainer
+  width: 88% 
+  border-bottom: 1px solid #122645
+  font-size: 18px
+  display: flex
+  position: relative
+  margin-left: 10px!important 
+  span
+    color: $base-color
+    font-size: 14px
+    position: absolute
+    top: -10px 
+    padding-left: 20px !important 
+    padding-right: 20px
+  input 
+    width: 90%
+    height: 100%
+    background: transparent
+    color: #434242
+    padding: 0 20px 
+  ::placeholder 
+    color: #9C9A9A
+  span 
+    font-size: 14px 
+.inputRightSide 
+  display: flex 
+  align-items: flex-end
+  margin-bottom: 10px    
+    
+.active 
+ .inputContainer
+   border-bottom-color: $base-color
+ .svgContainer
+   border-color: $base-color
+   svg 
+     stroke: $base-color

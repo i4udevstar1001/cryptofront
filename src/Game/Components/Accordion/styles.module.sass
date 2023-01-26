@@ -1,0 +1,43 @@
+@import '/src/breakpoints'
+@import '/src/variables'
+.container 
+  width: 100% 
+  justify-content: center
+  border-top: 2px solid black
+  padding-top: 8px
+  > div 
+    display: flex
+    align-items: center
+    justify-content: center
+    > div 
+      width: 100% 
+  .buttonContainer 
+    button 
+      border-radius: 20px!important
+  .row 
+    display: flex 
+    align-items: center
+  .textLight
+    color: $secondary-color
+    display: flex 
+    align-content: center
+    height: 100% 
+    p
+      width: 145px
+      text-align: center
+  .button
+    height: 68px
+    display: flex
+    margin: 0 auto 
+    align-items: center 
+    justify-content: space-evenly
+    font-size: 30px
+    color: white!important
+    @include media('<=tablet')
+      width: unset
+      height: unset
+    svg 
+      width: 30px
+      height: 30px 
+  button.close
+    background: $secondary-color

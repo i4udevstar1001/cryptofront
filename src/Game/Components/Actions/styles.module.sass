@@ -1,0 +1,92 @@
+@import '/src/breakpoints'
+@import '/src/variables'
+.range 
+  width: 80px 
+  height: 528px
+  position: absolute
+  bottom: 50px
+  display: flex
+  flex-direction: column
+  justify-content: center
+  padding-top: 23px
+  border-radius: 30px 
+  z-index: 3
+  background: #302F47
+  >div 
+    &:last-child
+      margin: 32px auto!important 
+  .top 
+    display: flex 
+    flex-direction: column 
+    align-items: center
+    border-bottom: 1px solid #000000
+    color: $base-color
+    p
+      font-size: 24px
+      font-weight: 900
+      color: $base-color!important 
+    svg 
+      stroke: white
+.container
+  padding: 16px 0 
+  width: 800px 
+  margin: 0 auto
+  position: relative
+  p
+    color: white 
+    font-size: 24px 
+    text-align: right
+    margin-top: 0
+  .buttons
+    width: 570px
+    margin-left: auto
+    margin-right: auto 
+    display: flex
+    justify-content: space-between
+    max-width: 800px
+    margin-top: 30px 
+    button
+      width: 174px
+      height: 56px
+      border-radius: 20px
+      box-shadow: 4px 4px 0px 4px black
+      background-color: $secondary-color 
+      border: none
+      font-size: 24px
+      font-weight: 900
+      color: white
+      cursor: pointer
+  
+button.active
+  background-color: $base-color!important
+
+@include media('<800px')
+  .range 
+    width: 68px
+    height: 452px
+    border-radius: 15px!important 
+    padding-top: 10px!important
+    > div
+      &:last-child
+        margin: 20px auto!important
+    p 
+      font-size: 18px!important
+    svg 
+      width: 15px 
+  .container 
+    
+    width: 95%!important
+  .buttons 
+    width: 90%!important
+  .sider 
+    width: 95%!important
+    button 
+      border-radius: 10px!important
+      width: 100px!important 
+      height: 29px!important
+      font-size: 15px!important 
+      font-weight: 900
+@include media('<=phone')
+  .container 
+    .buttons 
+      width: 100% 

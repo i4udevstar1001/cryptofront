@@ -1,0 +1,22 @@
+@import '../../variables'
+@import '../../breakpoints'
+
+.footer
+  position: sticky
+  bottom: 0 
+  height: 128px 
+  display: flex
+  z-index: 2
+  justify-content: space-between
+  align-items: center
+  background-color: $bg-light!important
+  img,svg 
+    width: 45px
+    height: 45px 
+@include media('<=phone')
+  .footer 
+    height: 69px
+    img,svg
+      width: 24px
+      height: 24px 
+

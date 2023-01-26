@@ -1,0 +1,90 @@
+@import '../../../breakpoints'
+@import '../../../variables'
+.container
+  border-radius: 20px 
+  width: 206px
+  height: 256px 
+  background-image: url("../../Assets/countdown-bg.png") 
+  background-repeat: no-repeat
+  background-size: cover
+  position: relative  
+  .top
+    width: 100% 
+    height: 70px 
+    font-size: 24px
+    font-weight: 900 
+    background-color: $base-color
+    display: flex 
+    align-items: center
+    justify-content: center
+    border-top-right-radius: 20px
+    border-top-left-radius: 20px
+  .body 
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    margin-top: 12px
+    *
+      position: relative
+      z-index: 2 
+    h1
+      font-size: 36px 
+      color: rgb(188, 180, 203)
+      font-weight: 900
+    h2 
+      color: white 
+      font-weight: 700
+      @include media('>=800')
+        font-size: 24px!important 
+        height: 40px!important
+    &:before
+      position: absolute
+      top: 70px 
+      content: ''
+      width: 100%
+      height: 185px 
+      background: rgba(85, 82, 129, 0.5)
+      border-bottom-left-radius: 20px 
+      border-bottom-right-radius: 20px
+      
+@include media('>=800px', '<desktop')
+  .container
+    height: 181px 
+    margin: 0 auto
+    .top 
+      height: 50px!important
+      border-top-right-radius: 20px
+      border-top-left-radius: 20px
+    .body
+      h1 
+        height: 45px 
+      h2 
+        font-size: 24px!important 
+        height: 18px 
+      p
+        font-size: 18px!important
+        margin-top: 16px!important
+      &:before 
+        top: 50px!important
+        height: 131px
+        
+        
+@include media('<=800px')
+  .container
+    height: 115px 
+    width: 136px 
+    .body
+      &:before
+        top: 30px!important
+        height: 85px
+    .top
+      height: 30px 
+      font-size: 13px!important 
+    h1 
+      font-size: 20px!important
+    h2 
+      font-size: 14px!important
+      height: 20px!important
+    p 
+      font-size: 12px!important

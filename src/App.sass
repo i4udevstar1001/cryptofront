@@ -1,0 +1,74 @@
+@import './variables'
+.ant-layout-content
+  //height: 100vh
+  overflow: scroll
+//padding-bottom: 100px!important
+#components-layout-demo-custom-trigger
+  .trigger
+    font-size: 18px
+    line-height: 64px
+    cursor: pointer
+    transition: color 0.3s
+
+    &:hover
+      color: #1890ff
+
+  .logo
+    height: 32px
+    margin: 16px
+    background: rgba(255, 255, 255, 0.3)
+
+.ant-layout-sider
+  p
+    font-size: 18px
+  span a
+    padding-left: 16px!important
+    font-size: 18px
+  .ant-avatar
+    transition: 200ms
+
+.ant-layout-sider-collapsed
+  flex: 0 0 100px!important
+  max-width: 100px!important
+  width: 100px!important
+  min-width: 100px!important
+  .my-sider
+    justify-content: center
+  .ant-avatar
+    width: 60px!important
+    height: 60px!important
+  .arrow-left
+    display: none
+  p
+    font-size: 14px!important
+
+.ant-menu-item 
+  display: flex!important
+  align-items: center
+  
+.ant-switch-handle::before 
+  background: white
+
+.removethis 
+  button 
+    color: black
+    cursor: pointer
+
+
+* 
+  scrollbar-width: thin
+  scrollbar-color:  $bg-light $bg-dark 
+
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar 
+  width: 12px
+
+
+*::-webkit-scrollbar-track 
+  background: $bg-light
+
+
+*::-webkit-scrollbar-thumb 
+  background-color:  $bg-dark
+  border-radius: 20px

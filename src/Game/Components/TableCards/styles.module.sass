@@ -1,0 +1,24 @@
+@import '/src/breakpoints'
+.container 
+  position: absolute
+  margin-left: auto
+  margin-right: auto
+  left: 0
+  right: 0
+  text-align: center
+  bottom: 45px 
+  div 
+    display: inline-block 
+    
+.spot
+  width: 50px
+  height: 69px
+  border-radius: 4px
+  background: rgba(16, 16, 26, 1)
+
+@include media('<=800px')
+  .container 
+    bottom: 50px 
+  .spot 
+    width: 30px
+    height: 44px

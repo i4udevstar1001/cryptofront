@@ -1,0 +1,139 @@
+@import '/src/breakpoints'
+@import '/src/variables'
+
+.container
+  width: 777px
+  height: 424px
+  background-color: #302F47
+  border: 55px solid $secondary-color
+  border-radius: 300px 
+  margin: 70px auto
+@include media('<=800px')
+  .container 
+    width: 100% 
+//
+@include media('>=1320px', '<1400px')
+  .container 
+    transform: scale(0.8)
+@include media('<1320px', '>desktop')
+  .container
+    transform: scale(0.7)
+@include media('<=1200px', '>950px')
+  .container
+    transform: scale(1)
+@include media('<=950px', '>800px')
+  .container
+    transform: scale(0.8)
+@include media('<=400px')
+  .container
+    transform: scale(0.8)    
+
+//@include media('<=800px', '>600px')
+//  .container
+//    transform: scale(1.3)
+//@include media('<=phone', '>XSphone')
+//  .container
+//    transform: scale(0.8)
+
+//@include media('<=phone','>=XSphone')
+//  .container
+//    transform: scale(0.7)
+//
+//@include media('<=360px')
+//  .container
+//    transform: scale(0.7)
+//    margin-left: -10px
+.flip-card 
+  background-color: transparent
+  width: 50px
+  height: 69px
+  border-radius: 30px
+  z-index: 2
+  
+.table-name-container
+  padding-bottom: 75px
+  position: relative
+  button 
+    position: absolute
+    left: 5%
+    top: 50%
+
+@include media('>=800px', '<desktop')
+  .table-name-container
+    text-align: center
+    button
+      position: unset!important
+      font-size: 30px
+      width: 228px 
+      height: 56px 
+@include media('<=phone')
+  .table-name-container
+    button 
+      font-size: 13px!important
+  .brand
+    h1 
+      font-size: 21px!important
+      height: 34px!important
+    h2 
+      font-size: 9px!important
+      width: 34px!important
+      border-top: 3px solid #302F47
+@include media('>=desktop')
+  .dealer-container
+    img
+      top: -193px 
+@include media('<desktop')
+  .dealer-container
+    width: 100%
+    height: 100%
+    img 
+      width: 130px
+      top: -132px 
+    &:before
+      border-radius: 100%
+      width: 107px
+      height: 107px
+      border: 8px solid #555281
+      left: 0
+      right: 0
+      margin-left: auto
+      margin-right: auto
+      content: ""
+      background: lightgray
+      position: absolute
+      top: -80px
+
+@include media('<800px')
+  .dealer-container
+    img
+      width: 70px
+      top: -132px
+    &:before
+      border-radius: 100%
+      width: 60px
+      height: 60px
+      border: 4px solid #555281
+      left: 0
+      right: 0
+      margin-left: auto
+      margin-right: auto
+      content: ""
+      background: lightgray
+      position: absolute
+      top: -40px!important
+
+      
+@include media('<=tablet')
+  .container 
+    width: 323px
+    height: 524px
+    border-width: 30px 
+  .dealer-image
+    width: 80px!important
+    top: -70px!important  
+  .flip-card
+    width: 30px
+    height: 44px
+
+.ant-slider-handle
+  margin-top: -12px!important

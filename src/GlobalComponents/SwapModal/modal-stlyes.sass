@@ -1,0 +1,11 @@
+// It is not possible to style child component using CSS module 
+// So I create this file to fix that issue and apply some custom 
+// styles 
+@import 'src/variables'
+.swap-modal 
+  .ant-modal-body
+    background: rgba(16, 16, 26, 0.9)
+    box-shadow: 8px 8px 10px 10px rgba(0, 0, 0, 0.25)
+    border-radius: $base-radius
+  .ant-modal-content 
+    opacity: 0.9

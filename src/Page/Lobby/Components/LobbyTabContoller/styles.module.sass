@@ -1,0 +1,36 @@
+@import '/src/variables'
+@import '/src/breakpoints.scss'
+
+.container 
+  flex: 1
+  border-radius: $base-radius - 10px 
+  padding: 40px 
+  background-color: $bg-light
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.25)
+  cursor: pointer 
+  h1 
+    font-size: 24px
+    font-weight: 900
+    padding-bottom: 12px!important
+  p 
+    font-size: 18px
+    
+@include media('>=phone', '<desktop')
+  .container 
+    padding: 30px
+@include media('>=XSphone', '<tablet')
+  .container 
+    padding: 16px 15px 4px 15px
+    h1 
+      padding-bottom: 0!important
+      font-size: 12px
+    p 
+      font-size: 12px
+@include media('<=XSphone')
+  .container
+    padding: 12px 10px 8px 10px
+    h1,p 
+      padding-bottom: 0!important
+      font-size: 10px
+.active
+  background: linear-gradient(180deg, rgba(240,60,61,1) 0%, rgba(145,27,76,1) 50%, rgba(99,19,67,1) 75%, rgba(36,16,38,1) 100%)

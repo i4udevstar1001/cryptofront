@@ -1,0 +1,20 @@
+@import '/src/variables'
+.showMoreText
+  display: flex
+  justify-content: space-between
+  max-height: 90px!important
+  transition: 500ms
+  h2
+    font-size: $large
+  p
+    overflow: hidden
+    color: $text-light!important
+    line-height: 20px
+
+  div
+    width: 20%
+.showMoreText.open
+  opacity: 1
+  max-height: 500px!important
+
+

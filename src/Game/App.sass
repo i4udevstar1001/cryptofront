@@ -1,0 +1,128 @@
+@import '/src/breakpoints'
+.container
+  position: relative
+  display: flex
+  align-items: center
+
+  button
+    &:first-child
+      position: absolute
+      left: 0
+
+    &:last-child
+      position: absolute
+      right: 0
+      border: 4px solid red
+
+.card
+  width: 30px
+  height: 70px
+  background-color: pink
+  border: 2px solid white
+  position: absolute
+  left: 50px
+
+.fold
+  opacity: 0.7
+
+.dealer-image
+  position: absolute
+  top: -180px
+  left: 0
+  right: 0
+  margin-left: auto
+  margin-right: auto
+
+.container .brand
+  display: flex
+  align-items: center
+  transform: translateY(-25px)
+  position: absolute
+  right: 0
+  left: 0
+  justify-content: center
+
+  h1
+    font-size: 42px
+    margin: 0
+    padding: 0 8px
+    font-weight: 900
+    color: #302F47
+    background: rgba(27, 22, 35, 0.5)
+
+.brand h1, h2
+  height: 60px
+  padding: 2px 8px !important
+
+.container .brand h2
+  font-size: 18px
+  font-weight: 900
+  color: rgba(240, 60, 61, 1)
+  transform: rotate(-90deg)
+  background: rgba(27, 22, 35, 0.5)
+  height: 38px!important
+  width: 59px
+  display: flex
+  align-items: center
+  justify-content: center
+  margin: 0!important
+  padding: 0!important
+
+.flip-card
+  background-color: transparent
+  width: 50px
+  height: 69px
+  border-radius: 30px
+  z-index: 2
+.flip-card-inner
+  position: relative
+  width: 100%
+  height: 100%
+  text-align: center
+  transition: transform 500ms
+  transform-style: preserve-3d
+
+/* Do an horizontal flip when you move the mouse over the flip box container
+
+/* Position the front and back side
+
+.flip-card-front, .flip-card-back
+  position: absolute
+  width: 100%
+  height: 100%
+  -webkit-backface-visibility: hidden
+  /* Safari
+  backface-visibility: hidden
+
+/* Style the front side (fallback if image is missing)
+
+.flip-card-front
+  background-color: white
+  color: black
+  border-radius: 4px
+
+/* Style the back side
+
+.flip-card-back
+  background-image: url('./Assets/card-bg.png')
+  background-size: 100% 100%
+  color: white
+  transform: rotateY(180deg)
+  border-radius: 10px
+
+.cube:hover
+  -webkit-transform: rotateY(90deg)
+.ant-slider-track
+  background: linear-gradient(45deg, #F03C3D, #1C1C2A)!important
+.ant-slider-vertical
+  display: flex 
+  justify-content: center
+.ant-slider-vertical .ant-slider-handle
+  margin-left: 0!important
+.ant-slider-vertical, .ant-slider-rail, .ant-slider-track
+  width: 11px!important
+  @include media('<=800px')
+    width: 9px!important
+    .ant-slider-handle
+      width: 27px
+      height: 27px 

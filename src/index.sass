@@ -1,0 +1,141 @@
+@import 'src/variables'
+@import 'src/breakpoints'
+
+body
+  font-family: 'Roboto', Arial, Helvetica, sans-serif!important
+.lobby
+  margin-left: 0!important 
+  margin-right: 0!important 
+.ant-layout-content
+  overflow: hidden
+h1, h2, h3, h4, h5, h6, span, p, label
+  margin: 0!important
+  padding: 0!important
+.warning
+  color: $warning
+.bold
+  font-weight: bold
+
+.text-center
+  text-align: center
+.p1
+  padding: 32px
+.pt1
+  padding-top: 32px
+.space-between
+  display: flex
+  justify-content: space-between
+.text-center
+  text-align: center
+.antd-row-highlighted
+  border-bottom: 1px solid #eee
+@include media('>=1400px')
+  .lobby,.wallet
+    width: 1200px
+    margin: 0 auto!important
+@include media('>phone', '<=desktop')
+  .ant-progress-inner, .ant-progress-bg
+    height: 12px!important
+
+@include media('>=phone', '<=desktop')
+  .ant-progress-inner, .ant-progress-bg
+    height: 10px!important
+
+@include media('<=phone')
+  .ant-progress-inner, .ant-progress-bg
+    height: 4px!important
+  .ant-layout-content
+    padding: 8px!important
+    padding-top: 20px!important
+    padding-bottom: 20px!important
+  .mobile-hide
+    display: none!important
+
+
+@include media('>=tablet', '<desktop')
+  .ant-layout-content
+    padding: 40px!important
+input
+  border: none
+  outline: none
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+
+/* Firefox */
+input[type=number]
+  -moz-appearance: textfield
+
+.apexcharts-tooltip
+  background: $bg-light
+  color: white
+  width: 122px
+  padding: 4px 28px
+  border-radius: 10px
+  display: flex
+  flex-direction: column-reverse
+  *
+    margin: 0
+    padding: 0
+    font-size: 10px!important
+.apexcharts-xcrosshairs
+  display: none !important
+
+
+@include media('>=414px', '<desktop')
+  .ant-layout-content
+    padding-left: 20px!important
+    padding-right: 20px!important
+
+
+.toast-container-classname
+  top: 0em!important
+  width: 660px!important
+  .toast-body-classname
+    display: unset
+    border-bottom-left-radius: 20px!important
+    border-bottom-right-radius: 20px!important
+  .toast-classname
+    background-color: $bg-light
+    border-bottom-left-radius: 20px!important
+    border-bottom-right-radius: 20px!important
+@include media('<desktop')
+@include media('>phone', '<desktop')
+  .toast-body-classname,.toast-classname
+    border-radius: 20px!important
+  .toast-container-classname
+    top: 10%!important
+    width: 90%!important
+@include media('<=phone')
+  .toast-container-classname
+    width: 100%!important
+    top: 15%!important
+    padding: 0 16px
+  .toast-classname
+    margin-top: 16px!important
+
+
+.ant-switch-inner
+  margin: 0 10px 0 36px!important
+.ant-switch-checked
+  span
+    margin: 0 36px 0 10px!important
+.ant-layout-sider-children
+  height: 100vh!important
+.ant-switch
+  min-width: 80px!important
+  border-radius: 10px!important
+.ant-switch-inner
+  font-size: 18px!important
+  font-weight: 700
+  margin-top: -2px!important
+
+.ant-switch-handle
+  width: 25px!important
+  height: 25px!important
+  top: 4px!important
+
+.ant-switch-handle::before
+  border-radius: 10px!important
+

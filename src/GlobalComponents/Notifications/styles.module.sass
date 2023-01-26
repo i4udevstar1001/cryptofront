@@ -1,0 +1,58 @@
+@import '/src/variables'
+@import 'src/breakpoints'
+.header 
+  height: 87px 
+  display: flex 
+  justify-content: space-between
+  align-items: center
+  padding: 48px
+  background-color: $bg-light
+  border-radius: $base-radius
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+  h1
+    font-size: 36px
+    font-weight: 900
+    line-height: 40px
+    color: $base-color!important
+.badge 
+  *
+    font-size: 13px!important
+.notificationContainer
+  overflow-y: auto
+  height: 80%
+  padding: 0 50px
+@include media('>phone', '<desktop')
+  .header 
+    height: 76px
+    > svg 
+      width: 45px!important
+      height: 45px!important
+  .badge 
+    svg
+      height: 30px!important
+      width: 30px!important
+@include media('<=phone')
+  .notificationContainer
+    height: 88%
+  .header
+    height: 15px
+    padding: 18px
+    h1 
+      font-size: 18px 
+    svg 
+      width: 20px
+  .notificationContainer
+    padding: 0 16px
+  .badge
+    svg 
+      height: 20px!important
+      width: 20px!important
+      
+@include media('<=XSphone')
+  .badge
+    height: 15px    
+    svg
+      height: 15px!important
+      width: 15px!important
+
+

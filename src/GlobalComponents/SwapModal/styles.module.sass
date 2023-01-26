@@ -1,0 +1,33 @@
+@import 'src/breakpoints'
+.close 
+  position: absolute 
+  top: 7% 
+  left: 7%
+  cursor: pointer
+    
+.row
+  height: 100%
+  > div 
+    display: flex 
+    justify-content: center
+    align-items: center
+.button
+  width: 100%!important
+  height: 100%!important
+  border-radius: 10px
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25) !important
+@include media( '>phone','<desktop')
+  .button 
+    margin: 64px 0
+    height: 128px!important
+@include media('<768px')
+  .button
+    height: 50px!important
+    img 
+      width: 35px
+  .swapCircle 
+    width: 122px
+    height: 134px 
+    margin-bottom: 40px  
+  .close 
+    display: none 

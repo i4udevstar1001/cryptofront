@@ -1,0 +1,58 @@
+@import '/src/variables'
+@import '/src/breakpoints'
+.container
+  display: flex
+  justify-content: space-between
+  border-bottom: 3px solid $bg-light
+  margin-top: 25px
+  h2  
+    font-size: 24px 
+    font-weight: 700
+  p 
+    font-size: 18px!important
+    color: $text-light!important
+    font-weight: 400 
+    line-height: 24px!important
+    flex: 1
+    height: 50px
+    overflow: hidden
+    padding-right: 90px!important
+    margin-top: 8px!important
+
+.height-unset
+  height: unset
+.trash
+  stroke: $base-color
+.chevron 
+  stroke: white
+  margin-right: 40px
+.circle 
+  margin-right: 18px
+  width: 45px 
+  height: 45px
+  margin-top: 15px
+@include media('>phone', '<desktop')    
+  .chevron 
+    width: 40px
+  
+@include media('<=phone')
+  .container 
+    padding: 0
+    margin-top: 16px
+    h2 
+      font-size: 14px
+    p 
+      font-size: 12px!important
+      line-height: 15px!important
+      height: 30px
+      margin-top: 8px
+      padding-right: 40px!important
+      margin-bottom: 26px!important
+    .chevron 
+      width: 20px
+      margin-right: 20px
+    .trash 
+      width: 15px 
+    .circle 
+      width: 15px
+      margin-top: 0px

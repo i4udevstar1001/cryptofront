@@ -1,0 +1,52 @@
+@import '/src/variables'
+@import '/src/breakpoints'
+
+.ant-progress-text
+  color: white
+.ant-progress-bg
+  height: 12px!important
+  background: #F03C3D!important
+.ant-progress-inner
+  background: #FCAFB0!important
+//@include media('>=desktop')
+//  .ant-layout-content
+//    width: 1200px!important 
+@media (max-width: 1200px)
+  .ant-layout-content
+    width: unset!important
+//table 
+.ant-table-tbody > tr > td, th
+  border-bottom: none!important
+//radio button
+label.ant-radio-button-wrapper
+  margin: 0 13px!important
+  background: transparent!important
+  border: 1px solid $base-color!important
+  border-radius: 10px!important
+  span
+    padding: 8px!important
+    color: $base-color
+
+.ant-radio-button-wrapper::before
+  width: unset!important
+  height: unset!important
+
+label.ant-radio-button-wrapper-checked
+  border: 1px solid white!important
+  span
+    color: white!important
+.ant-table-placeholder
+  background-color: $bg-light
+  &hover
+    td
+      background-color: unset!important
+.ant-empty-description
+  color: white
+.ant-menu-item
+  height: 80px!important
+.ant-menu
+  background: transparent!important
+.ant-menu-item-selected
+  border-left: 10px solid $base-color
+  background: linear-gradient(89.6deg, #1C1B2A 44.11%, #101019 83.02%)!important 
+

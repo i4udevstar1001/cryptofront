@@ -1,0 +1,124 @@
+@import '/src/variables'
+@import '/src/breakpoints'
+.swapToken
+  width: 422px
+  height: 433px 
+  background-color: $bg-light
+  border-radius: $base-radius
+  padding: 20px
+  padding-top: 40px
+  .buttonContainer
+    text-align: center
+  .button
+    width: 244px
+    height: 63px 
+    border-radius: 10px
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25) !important
+    margin-top: 27px!important
+    img 
+      width: 40px 
+  .topLabels
+    display: flex 
+    flex: 1
+    height: 20px 
+    justify-content: space-between
+    flex-direction: row
+    font-weight: 900
+    color: $text-light
+    padding-left: 20px 
+    margin-bottom: 10px
+  > img 
+      width: 20px
+      display: block
+      margin-left: auto
+      margin-right: auto 
+      margin-top: 30px 
+      align-self: center
+  .ant-radio-group
+    text-align: center
+  > button
+    height: 60px
+    justify-content: center
+  
+    border-radius: 10px!important
+  .inputContainer
+    display: flex 
+    background-color: $bg-dark
+    padding: 16px 
+    border-radius: 10px
+    input 
+      width: 190px
+    button 
+      font-size: 13px 
+    .containerEnd
+      width: 200px
+      display: flex 
+      flex-direction: row-reverse
+      > *
+        margin-right: 16px 
+      span 
+        font-weight: 900
+      img 
+        width: 25px 
+        height: 25px 
+.radioGroup
+  width: 100%
+  text-align: center
+  margin-top: 10px!important
+  label 
+    font-size: 14px!important
+    font-weight: 700
+    margin-bottom: 0!important
+@include media ('<desktop')
+  .swapToken
+    .arrowDown
+      visibility: hidden
+      margin-top: 12px 
+  .radioGroup
+    display: none!important
+  .button 
+    margin-top: 36px!important
+  
+@include media('<=phone')
+  .topLabels
+    margin-bottom: 5px!important
+  .inputContainer
+    padding: 12px!important
+    button 
+      span
+        font-size: 11px 
+  .radioGroup
+    display: none!important
+  .swapToken
+    width: 90%
+    height: 347px 
+    span, label
+      font-size: 13px 
+    input 
+      font-size: 12px
+      width: 130px!important
+    .arrowDown 
+      visibility: hidden 
+  .containerEnd
+    img 
+      width: 20px!important
+      height: 20px!important
+    button 
+      font-size: 13px 
+    > * 
+      margin-right: 8px!important 
+  .button
+    width: 195px!important 
+    height: 50px!important
+    img 
+      width: 38px
+      height: 35px 
+@include media('<=XSphone')
+  .swapToken
+    width: 95%
+    margin: 0 auto
+    input 
+      width: 70px!important
+    
+      
+
