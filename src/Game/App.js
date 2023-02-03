@@ -1,7 +1,7 @@
 // import {useRef, useState, useEffect} from 'react'
 import {useDispatch, useSelector} from "react-redux"
-// import {action, assignCardsToPlayer, turnAllCards} from "../Redux/State/Config"
-import {action} from "../Redux/State/Config"
+// import {action, addCardsToTable, assignCardsToPlayer, turnAllCards} from "../Redux/State/Config"
+import {action, assignCardsToPlayer} from "../Redux/State/Config"
 import './App.sass'
 import Player from './Components/Player'
 import Dealer from './Components/Dealer'
@@ -28,14 +28,16 @@ const GameApp = () => {
     // const onAssignCard = () => {
     //     dispatch(assignCardsToPlayer())
     // }
- 
 
     const positions = getPositions(state.roomSize)
     
     return (
         <>
             <div className={'table-name-container'}>
-                <Button onClick={() => dispatch(action({type: 'CALL', value: 100, index: 2}))}>
+                <Button onClick={() => {
+                    dispatch(action({type: 'CALL', value: 100, index: 2}));
+                    dispatch(assignCardsToPlayer())
+                }}>
                     {state.tableName}
                 </Button>
             </div> 
@@ -46,17 +48,18 @@ const GameApp = () => {
                     <h1>CRYPTOACES.</h1>
                     <h2>CLUB</h2>
                 </div>
-                <TableCards/>   
+                <TableCards />   
                 { players.length && players.map((item, index) => {
                         const style = isPhone ?  positions.phone[index].player : positions.desktop[index].player
                     
-                    if(!item) return ({}) 
+                    // if(!item) return ({}) 
                     return (
                         <Player
                             item={item}
                             chips={item.chips}
                             style={style}
                             key={index}
+                            avatar={item.avatar}
                             numbersPosition={isPhone ?  positions.phone[index].position : positions.desktop[index].position}
                             isDealer={state.dealer === index}
                             isHisTurn={state.turn === index}

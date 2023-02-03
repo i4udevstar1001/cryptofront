@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import styles from './styles.module.sass'
 import { useSelector, useDispatch } from "react-redux";
 import { action } from "../../../Redux/State/Config"
@@ -25,24 +25,44 @@ const Actions = (props) => {
             
             setShowRange(false)
         }
-    }
-    
-    useEffect(() => {
-        console.log('This is app players')
-        console.log(appState.players)
         appState.players.map((player, index) => {
             if(appState.activePlayer === index)
-               dispatch(action({index, type: state, value: state === 'RAISE' ? value : 0})) 
+                dispatch(action({type: state, value: state === 'RAISE' ? value : 40, index: index})) 
             return ({})
         })
-    }, [appState, state, value, dispatch])
+    }
+
+    const handleCall = () => {
+        setState('CALL')
+        appState.players.map((player, index) => {
+            if(appState.activePlayer === index)
+                dispatch(action({type: state, value: state === 'RAISE' ? value : 40, index: index})) 
+            return ({})
+        })
+    }
+
+    const handleFold = () => {
+        setState('FOLD')
+        appState.players.map((player, index) => {
+            if(appState.activePlayer === index)
+                dispatch(action({type: state, value: state === 'RAISE' ? value : 40, index: index})) 
+            return ({})
+        })
+    }
+    
+    // useEffect(() => {
+    //     appState.players.map((player, index) => {
+    //         if(appState.activePlayer === index)
+    //             dispatch(action({type: state, value: state === 'RAISE' ? value : 40, index: index})) 
+    //     })
+    // }, [appState, state, value, dispatch])
 
     return (
         <div className={styles.container}>
             <div className={styles.buttons}>
-                <button className={state === 'RAISE' && styles.active} onClick={handleRaise}>RAISE</button>
-                <button className={state === 'CALL' && styles.active} onClick={() => setState('CALL')}>CALL</button>
-                <button className={state === 'FOLD' && styles.active} onClick={() => setState('FOLD')}>FOLD</button>
+                <button className={state === 'RAISE' ? styles.active : ''} onClick={handleRaise}>RAISE</button>
+                <button className={state === 'CALL' ? styles.active : ''} onClick={handleCall}>CALL</button>
+                <button className={state === 'FOLD' ? styles.active : ''} onClick={handleFold}>FOLD</button>
             </div>
             <div className={styles.sider}>
                 {isDesktopOrLaptop && <Sider/>}

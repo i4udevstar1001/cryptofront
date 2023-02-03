@@ -98,7 +98,7 @@ const Player = (props) => {
     const [loaded, setLoaded] = useState(false)
     const [progress, setProgress] = useState(0)
     const fold = useFold()
-    const {isDealer, infoPosition, isHisTurn, item} = props
+    const {isDealer, infoPosition, isHisTurn, item, avatar} = props
     const styles = Object.assign(props.style, item?.action === 'FOLD' ? fold : null)
     // const renderActionAnimation = useRef(true)
     // const renderNumberAnimation = useRef(true)
@@ -148,7 +148,7 @@ const Player = (props) => {
                     <div>
                         {
                             item === null ? "Empty" :
-                                <img src={'https://picsum.photos/80'}
+                                <img src={avatar}
                                      style={loaded ? {} : {display: 'none'}}
                                      className={sassStyles.playerAvatar}
                                      onLoad={() => setLoaded(true)} alt=""

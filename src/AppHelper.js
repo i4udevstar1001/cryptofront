@@ -79,8 +79,8 @@ const AppHelper = () => {
               <Menu.Item key="3" icon={<Icons.Heart />}>
                 <Link to={"/game"}>My Game</Link>
               </Menu.Item>
-              <Button onClick={() => {AuthService.logout();  history.push('/landing');}}>Log Out</Button>
             </Menu>
+            <Button onClick={() => {AuthService.logout();  history.push('/landing');}}>Log Out</Button>
             <div
               style={{
                 position: "absolute",

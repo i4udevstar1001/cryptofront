@@ -42,7 +42,7 @@ export const counterSlice = createSlice({
                 if (item) {
                     item.cards = [state.availableCards.pop(), state.availableCards.pop()]
                     item.cards?.forEach(card => {
-                        if(index === state.activePlayer)
+                        if(index === 2)
                             card.back = false
                         else card.back = true
                     })
@@ -66,7 +66,7 @@ export const counterSlice = createSlice({
                     }
                     if (actionType === 'CALL' || actionType === 'RAISE') {
                         item.chips -= value
-                        state.pot = value
+                        state.pot += value
                     }
                 }
             })

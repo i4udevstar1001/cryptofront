@@ -11,7 +11,7 @@ import arrowRight from '../../Assets/hands-history-arrow-right.png'
        },
            {
                type: '♦',
-               value: 2,
+               value: 'J',
            }], cards: [
             {
                 type: '♥',

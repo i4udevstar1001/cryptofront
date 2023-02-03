@@ -55,7 +55,7 @@ const AceLive = () => {
                    rowClassName={(record, index) => index % 2 === 0 && styles.highlight}
             />
             <Button>
-                <PlusCircle style={{paddingRight: '8px'}} size={30}/>
+                <PlusCircle style={{paddingRight: '8px'}} size={30} />
                  JOIN TABLE
             </Button>
         </div>
