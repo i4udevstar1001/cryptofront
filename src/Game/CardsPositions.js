@@ -84,11 +84,12 @@ export default function getPositions(players) {
                         right: 0,
                         marginLeft: 'auto',
                         marginRight: 'auto',
-                        bottom: '-85px'
+                        bottom: '-85px',
+                        zIndex: 1,
                     },
-                    cards: ['translate(320px, 280px) rotate(10deg)', 'translate(290px, 290px) rotate(-10deg)'],
+                    cards: ['translate(320px, 170px) rotate(10deg)', 'translate(290px, 188px) rotate(-10deg)'],
                     info: 'bottom',
-                    position: 'bottom'
+                    position: 'bottom',
 
                 },
                 {

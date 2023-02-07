@@ -1,7 +1,7 @@
 // import {useRef, useState, useEffect} from 'react'
 import {useDispatch, useSelector} from "react-redux"
 // import {action, addCardsToTable, assignCardsToPlayer, turnAllCards} from "../Redux/State/Config"
-import {action, assignCardsToPlayer} from "../Redux/State/Config"
+import {action, addCardsToTable} from "../Redux/State/Config"
 import './App.sass'
 import Player from './Components/Player'
 import Dealer from './Components/Dealer'
@@ -23,7 +23,6 @@ const GameApp = () => {
     // const {players, bigBlindIndex, smallBlindIndex} = state
     const {players} = state
     const isTabletOrPhone = useMediaQuery({ query: '(max-width: 1199px)' })    
-        
     
     // const onAssignCard = () => {
     //     dispatch(assignCardsToPlayer())
@@ -36,7 +35,11 @@ const GameApp = () => {
             <div className={'table-name-container'}>
                 <Button onClick={() => {
                     dispatch(action({type: 'CALL', value: 100, index: 2}));
-                    dispatch(assignCardsToPlayer())
+                    // dispatch(assignCardsToPlayer());
+                    console.log(state.availableCards)
+                    dispatch(addCardsToTable([state.availableCards[0], state.availableCards[1], state.availableCards[2]]))
+                    
+                    console.log(state.availableCards)
                 }}>
                     {state.tableName}
                 </Button>

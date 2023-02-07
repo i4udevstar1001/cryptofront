@@ -8,7 +8,7 @@ import dealerLarge from '../../Assets/dealer-large.png'
 import dealerSmall from '../../Assets/dealer-small.png'
 import {useDispatch, useSelector} from "react-redux"
 // import {startGame, assignCardsToPlayer, initiatePlayers, addCardsToTable} from "../../../Redux/State/Config"
-import {startGame, initiatePlayers} from "../../../Redux/State/Config"
+import {startGame, initiatePlayers, assignCardsToPlayer} from "../../../Redux/State/Config"
 import {useEffect, useState} from "react";
 import getPositions from '../../CardsPositions'
 import Card from '../Card'
@@ -93,6 +93,7 @@ const Dealer = () => {
             const players = newGame()
             dispatch(startGame())
             dispatch(initiatePlayers(players))
+            dispatch(assignCardsToPlayer(players));
         }
     }, [dispatch, state])
     
@@ -138,7 +139,7 @@ const Dealer = () => {
             )}
             {
                 state.tableCards.map((card, index) => {
-                    const to = isPhone ? `translate(${41 + (40 * index)}px, 153px) rotate(0deg)`: `translate(${193 + (60 * index)}px, 95px) rotate(0deg)`
+                    const to = isPhone ? `translate(${41 + (40 * index)}px, 153px) rotate(0deg)`: `translate(${193 + (60 * index)}px, 69px) rotate(0deg)`
                     console.log("Type")
                     console.log(card)
                     return (
