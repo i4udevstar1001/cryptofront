@@ -13,8 +13,12 @@ const initialState = {
     round: 0,
     gameStage: null,
     turn: 0,
-    activePlayer: null,
+    maxBetAmount: 40,
+    activePlayer: 0,
     performAnimation: true,
+    btnStatus: false,
+    curBet: 0,
+    curPlayCash: 0,
 }
 
 export const counterSlice = createSlice({
@@ -50,9 +54,9 @@ export const counterSlice = createSlice({
             })
         },
         addCardsToTable: (state, action) => {
-            const tableCards = state.tableCards.concat(action.payload)
+            // const tableCards = state.tableCards.concat(action.payload)
+            const tableCards = state.tableCards.concat(state.availableCards.pop())
             state.tableCards = tableCards
-
         },
         action: (state, action) => {
             const actionType = action.payload.type
@@ -62,12 +66,26 @@ export const counterSlice = createSlice({
                 if (playerIndex === index) {
                     item.action = {
                         type: actionType,
-                        value: value 
+                        value: value,
+                        flag: !item?.action?.flag
                     }
-                    if (actionType === 'CALL' || actionType === 'RAISE') {
+                    if (actionType === 'CALL' || actionType === 'RAISE' || actionType === 'FOLLOW') {
                         item.chips -= value
                         state.pot += value
+                        state.curBet = value
                     }
+                }
+            })
+            state.activePlayer++
+            state.turn++;
+            if( state.activePlayer === state.roomSize ) {
+                state.activePlayer = 0
+                state.turn = 0;
+            }
+            state.players?.forEach((item, index) => {
+                if( state.activePlayer === index ) {
+                    state.curPlayCash = item.chips
+                    console.log(state.activePlayer)
                 }
             })
         },
@@ -81,6 +99,13 @@ export const counterSlice = createSlice({
         updateDealer: ((state, action) => {
             state.dealer = action.payload
         }),
+        updateActivePlayer: ((state, action) => {
+            state.activePlayer = action.payload.playerNumber
+            state.turn = action.payload.playerNumber
+        }),
+        updateBtnStatus: ((state, action) => {
+            state.btnStatus = action.payload.status
+        }),
         updateTableName: ((state, action) => {
             state.tableName = action.payload
         }),
@@ -90,6 +115,18 @@ export const counterSlice = createSlice({
     },
 })
 
-export const {initiatePlayers, startGame, assignCardsToPlayer, addCardsToTable, action, turnAllCards, stopPerformingAnimation, updateDealer, updateTableName, updateRoomSize} = counterSlice.actions
+export const {
+    initiatePlayers, 
+    startGame, 
+    updateActivePlayer, 
+    updateBtnStatus, 
+    assignCardsToPlayer, 
+    addCardsToTable, 
+    action, 
+    turnAllCards, 
+    stopPerformingAnimation, 
+    updateDealer, 
+    updateTableName, 
+    updateRoomSize } = counterSlice.actions
 
 export default counterSlice.reducer

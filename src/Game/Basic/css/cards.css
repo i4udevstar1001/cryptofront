@@ -55,6 +55,44 @@
     /* yes, it's intentional that Mozilla, Webkit, Opera and IE all will get different backgrounds ... why not? :) */
 }
 
+=======
+/* suit colours
+********************************************************************/
+
+.playingCards .card.diams {
+    color: #f00 !important;
+}
+.playingCards.fourColours .card.diams {
+    color: #00f !important;
+}
+[lang=de] .playingCards.fourColours .card.diams {
+    color: #f60 !important;
+}
+.playingCards .card.hearts {
+    color: #f00 !important;
+}
+.playingCards .card.spades {
+    color: #000 !important;
+}
+[lang=de] .playingCards.fourColours .card.spades {
+    color: #090 !important;
+}
+.playingCards .card.clubs {
+    color: #000 !important;
+}
+.playingCards.fourColours .card.clubs {
+    color: #090 !important;
+}
+[lang=de] .playingCards.fourColours .card.clubs {
+    color: #000 !important;
+}
+.playingCards .card.joker {
+    color: #000 !important;
+}
+.playingCards .card.joker.big {
+    color: #f00 !important;
+}
+
 /* inner bits
 ********************************************************************/
 
@@ -65,8 +103,6 @@
     display: block;
     line-height: 1;
     text-align: left;
-}
-.playingCards .card .rank {
 }
 .playingCards .card .suit {
     line-height: .7;
@@ -587,3 +623,38 @@
     -o-transform: translate(-2.4em, 1.3em) rotate(40deg);
     transform: translate(-2.5em, 1.3em) rotate(40deg);
 }
+=======
+
+/* deck */
+.playingCards ul.deck li:nth-child(1)  { left: 0;    bottom: 0; }
+.playingCards ul.deck li:nth-child(2)  { left: 2px;  bottom: 1px; }
+.playingCards ul.deck li:nth-child(3)  { left: 4px;  bottom: 2px; }
+.playingCards ul.deck li:nth-child(4)  { left: 6px;  bottom: 3px; }
+.playingCards ul.deck li:nth-child(5)  { left: 8px;  bottom: 4px; }
+.playingCards ul.deck li:nth-child(6)  { left: 10px; bottom: 5px; }
+.playingCards ul.deck li:nth-child(7)  { left: 12px; bottom: 6px; }
+.playingCards ul.deck li:nth-child(8)  { left: 14px; bottom: 7px; }
+.playingCards ul.deck li:nth-child(9)  { left: 16px; bottom: 8px; }
+.playingCards ul.deck li:nth-child(10) { left: 18px; bottom: 9px; }
+.playingCards ul.deck li:nth-child(11) { left: 20px; bottom: 10px; }
+.playingCards ul.deck li:nth-child(12) { left: 22px; bottom: 11px; }
+.playingCards ul.deck li:nth-child(13) { left: 24px; bottom: 12px; }
+.playingCards ul.deck li:nth-child(14) { left: 26px; bottom: 13px; }
+.playingCards ul.deck li:nth-child(15) { left: 28px; bottom: 14px; }
+.playingCards ul.deck li:nth-child(16) { left: 30px; bottom: 15px; }
+.playingCards ul.deck li:nth-child(17) { left: 32px; bottom: 16px; }
+.playingCards ul.deck li:nth-child(18) { left: 34px; bottom: 17px; }
+.playingCards ul.deck li:nth-child(19) { left: 36px; bottom: 18px; }
+.playingCards ul.deck li:nth-child(20) { left: 38px; bottom: 19px; }
+.playingCards ul.deck li:nth-child(21) { left: 40px; bottom: 20px; }
+.playingCards ul.deck li:nth-child(22) { left: 42px; bottom: 21px; }
+.playingCards ul.deck li:nth-child(23) { left: 44px; bottom: 22px; }
+.playingCards ul.deck li:nth-child(24) { left: 46px; bottom: 23px; }
+.playingCards ul.deck li:nth-child(25) { left: 48px; bottom: 24px; }
+.playingCards ul.deck li:nth-child(26) { left: 50px; bottom: 25px; }
+.playingCards ul.deck li:nth-child(27) { left: 52px; bottom: 26px; }
+.playingCards ul.deck li:nth-child(28) { left: 54px; bottom: 27px; }
+.playingCards ul.deck li:nth-child(29) { left: 56px; bottom: 28px; }
+.playingCards ul.deck li:nth-child(30) { left: 58px; bottom: 29px; }
+.playingCards ul.deck li:nth-child(31) { left: 60px; bottom: 30px; }
+.playingCards ul.deck li:nth-child(32) { left: 62px; bottom: 31px; }

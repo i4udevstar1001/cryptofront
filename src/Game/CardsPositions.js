@@ -56,18 +56,19 @@ export default function getPositions(players) {
     }
     if (players === 5) {
         return ({
-            desktop: [{
-                player: {
-                    right: '-85px',
-                    top: 0,
-                    bottom: 0,
-                    marginTop: 'auto',
-                    marginBottom: 'auto',
+            desktop: [
+                {
+                    player: {
+                        right: '-85px',
+                        top: 0,
+                        bottom: 0,
+                        marginTop: 'auto',
+                        marginBottom: 'auto',
+                    },
+                    cards: ['translate(690px, -76px) rotate(10deg)', 'translate(660px, -65px) rotate(-10deg)'],
+                    info: 'bottom',
+                    position: 'left'
                 },
-                cards: ['translate(690px, -76px) rotate(10deg)', 'translate(660px, -65px) rotate(-10deg)'],
-                info: 'bottom',
-                position: 'right'
-            },
                 {
                     player: {
                         right: '30px',
@@ -75,7 +76,7 @@ export default function getPositions(players) {
                     },
                     cards: ['translate(645px, 168px) rotate(10deg)', 'translate(615px, 178px) rotate(-10deg)'],
                     info: 'bottom',
-                    position: 'bottom'
+                    position: 'top'
 
                 },
                 {
@@ -89,7 +90,7 @@ export default function getPositions(players) {
                     },
                     cards: ['translate(320px, 170px) rotate(10deg)', 'translate(290px, 188px) rotate(-10deg)'],
                     info: 'bottom',
-                    position: 'bottom',
+                    position: 'top',
 
                 },
                 {
@@ -99,7 +100,7 @@ export default function getPositions(players) {
                     },
                     cards: ['translate(-10px, 168px) rotate(10deg)', 'translate(-40px, 178px) rotate(-10deg)'], 
                     info: 'bottom',
-                    position: 'bottom'
+                    position: 'top'
 
                 },
                 {
@@ -112,19 +113,20 @@ export default function getPositions(players) {
                     },
                     cards: ['translate(-30px, -80px) rotate(10deg)', 'translate(-60px, -70px) rotate(-10deg)'],
                     info: 'bottom',
-                    position: 'left'
+                    position: 'right'
                 },
 
             ],
-            phone: [{
-                player: {
-                    top: '120px ',
-                    right: '-46px '
+            phone: [
+                {
+                    player: {
+                        top: '120px ',
+                        right: '-46px '
+                    },
+                    cards: ['translate(277px, -125px) rotate(10deg)', 'translate(257px, -115px) rotate(-10deg)'],
+                    info: 'bottom',
+                    position: 'right'
                 },
-                cards: ['translate(277px, -125px) rotate(10deg)', 'translate(257px, -115px) rotate(-10deg)'],
-                info: 'bottom',
-                position: 'right'
-            },
                 {
                     player: {
                         top: '340px ',
@@ -132,7 +134,7 @@ export default function getPositions(players) {
                     },
                     cards: ['translate(277px, 96px) rotate(10deg)', 'translate(257px, 106px) rotate(-10deg)'],
                     info: 'bottom',
-                    position: 'bottom'
+                    position: 'top'
 
                 },
                 {

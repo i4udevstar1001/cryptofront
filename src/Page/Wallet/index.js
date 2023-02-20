@@ -24,7 +24,7 @@ const Wallet = () => {
     const Progress = (
         <WalletTabController
             title={'Total Balance'}
-            topValue={500}
+            topValue={700}
             bottomValue={23000}
             content={<CircularProgressbar/>}
         />

@@ -22,33 +22,35 @@ const PlayerAccount = ({value}) => {
     )
 }
 
-const PlayerActions = React.memo(({type}) => {
-        const springProps = useSpring({
-            reset: true,
-            delay: 1000,
-            config: {
-                duration: 800
-            },
-            from: {
-                opacity: 1,
-                top: '0px'
-            },
-            to: {
-                opacity: 0,
-                top: '-100px'
-            }
-        });
-
-  
-        
-        const classNames = `${sassStyles.action} 
+const PlayerActions = React.memo(({type, flag}) => {
+    const springProps = useSpring({
+        reset: true,
+        reverse: true,
+        delay: 600,
+        config: {
+            duration: 1100
+        },
+        from: {
+            opacity: 0.9,
+            top: '0px'
+        },
+        to: [{
+            opacity: 1,
+            top: '-160px',
+        }, {
+            opacity: 0,
+            top: '-60px',
+        }]
+    });
+    
+    const classNames = `${sassStyles.action}
     ${type === 'CHECK' && sassStyles.check}
     ${type === 'FOLD' && sassStyles.fold}
     ${type === 'CALL' && sassStyles.call}
     ${type === 'RAISE' && sassStyles.raise}`
 
         return (
-            <animated.div style={springProps} className={sassStyles.actionContainer}>
+            <animated.div style={springProps} className={sassStyles.actionContainer} key={flag}>
                 <div className={classNames}>
                     {type}
                 </div>
@@ -58,23 +60,22 @@ const PlayerActions = React.memo(({type}) => {
     
     
     
-const GreenNumbres = React.memo(({direction, value}) => {
-    
+const GreenNumbres = React.memo(({direction, value}) => {    
         const from = {
             opacity: 1
         }
-        from[direction] = '100px'
+        from[direction] = '70px'
 
         const to = {
             opacity: 0,
         }
-        to[direction] = '300px'
+        to[direction] = '-400px'
         
         const springProps = useSpring({
             reset: true,
             delay: 800,
             config: {
-                duration: 1000
+                duration: 2000
             },
             from,
             to,
@@ -123,15 +124,14 @@ const Player = (props) => {
     const performAnimation = (item) => {
         if (!item.action) return false
         const type = item.action.type
-        if (type === 'CALL' | type === 'RAISE')
+        if (type === 'CALL' | type === 'RAISE' | type === 'FOLLOW')
             return true
         return false
     }
 
 
     return (
-        <>
-          
+        <>         
             <animated.div style={styles} className={sassStyles.container}>
                 <CircularProgressbarWithChildren
                     value={progress}
@@ -162,9 +162,9 @@ const Player = (props) => {
                         {isDealer && <div className={sassStyles.dealer}>D</div>}
 
                         {
-                            item.action && item.action.type && (
+                            item.action && item.action.type && item.action.type !== 'FOLLOW' && (
                                 <>
-                                    <PlayerActions type={item.action.type}/>
+                                    <PlayerActions type={item.action.type} flag={!item.action?.flag}/>
                                 </>
                             )
                         }
@@ -173,6 +173,7 @@ const Player = (props) => {
                             <GreenNumbres
                                 direction={props.numbersPosition}
                                 value={item.action.value}
+                                flag={!item.action?.flag}
                             />
                         }
 

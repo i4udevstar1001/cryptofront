@@ -1,8 +1,6 @@
 @import '/src/breakpoints'
 @import '/src/variables'
 
-
-
 @include media('>800px', '<desktop')
   .container
     width: 291px!important
@@ -19,6 +17,8 @@
       > div > div
         width: 35px !important
         height: 45px
+      .body
+        font-size: 18px !important
   > .top
     height: 63px
     color: rgba(85, 82, 129, 1)
@@ -26,6 +26,9 @@
     display: flex
     align-items: center
     justify-content: center
+
+  > .body
+    font-size: 18px !important
 
   .row
     display: flex

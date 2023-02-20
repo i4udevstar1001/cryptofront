@@ -133,6 +133,7 @@ const TableLobby = (props) => {
                         })
                     },
                 })}
+                rowKey={(r) => r.id}
             />
         </div>
     )

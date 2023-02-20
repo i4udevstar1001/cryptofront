@@ -19,7 +19,8 @@ const Card = (props) => {
     const type = props.type
     const value = props.value
     // const animationType = props.animationType
-    let color
+    let color = 'red'
+    
     if (type === '♦' || type === '♥')
         color = 'red'
     else
@@ -39,9 +40,9 @@ const Card = (props) => {
 
     const rotateAnimation = useSpring({
         reset: true,
-        transform: props.back  ? 'rotateY(180deg)' : 'rotateY(0deg)',
+        transform: props.back ? 'rotateY(180deg)' : 'rotateY(0deg)',
         from: {
-            transform: props.back  ? 'rotateY(180deg)' : 'rotateY(0deg)'
+            transform: props.back ? 'rotateY(180deg)' : 'rotateY(0deg)'
         }
     });
     

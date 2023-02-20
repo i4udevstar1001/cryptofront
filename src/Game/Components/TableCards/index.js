@@ -5,7 +5,7 @@ const TableCards = () => {
     
     for(let c =1; c<=5; c++){
         spots.push(
-            <div className={styles.spot} style={{marginLeft: 10 + 'px'}}>
+            <div className={styles.spot} key={c} style={{marginLeft: 10 + 'px'}}>
             </div>
         )
     }
