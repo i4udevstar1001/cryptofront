@@ -9,7 +9,7 @@ import dealerSmall from '../../Assets/dealer-small.png'
 import {useDispatch, useSelector} from "react-redux"
 // import {startGame, assignCardsToPlayer, initiatePlayers, addCardsToTable} from "../../../Redux/State/Config"
 import {
-    action, startGame, 
+    pokerAction, startGame, 
     initiatePlayers, 
     assignCardsToPlayer, 
     updateActivePlayer,
@@ -90,8 +90,6 @@ const Dealer = () => {
     const isDesktop = useMediaQuery({query: `(min-width: ${variables.breakpoints.desktop})`})
     const isPhone = useMediaQuery({ query: '(max-width: 800px)' })
     // socket connection
-    
-    
         
     
     useEffect(() => {
@@ -100,11 +98,11 @@ const Dealer = () => {
             dispatch(startGame())
             dispatch(initiatePlayers(players))
             setTimeout(()=>{
-                dispatch(action({type: 'FOLLOW', value: 20, index: 2}));
+                dispatch(pokerAction({type: 'FOLLOW', value: state.round * 20, index: (state.dealer+1) % state.roomSize}));
             }, "2000");
             setTimeout(()=>{
-                dispatch(action({type: 'FOLLOW', value: 40, index: 3}));
-                dispatch(updateActivePlayer({playerNumber: 4}));
+                dispatch(pokerAction({type: 'FOLLOW', value: state.round * 40, index: (state.dealer+2) % state.roomSize}));
+                dispatch(updateActivePlayer({playerNumber: (state.dealer+3) % state.roomSize}));
             }, "3000");
             setTimeout(()=>{
                 dispatch(assignCardsToPlayer(players));
@@ -156,8 +154,6 @@ const Dealer = () => {
             {
                 state.tableCards.map((card, index) => {
                     const to = isPhone ? `translate(${41 + (40 * index)}px, 153px) rotate(0deg)`: `translate(${193 + (60 * index)}px, 33px) rotate(0deg)`
-                    console.log("Type")
-                    console.log(card)
                     return (
                         <Card
                             animationType={'TABLE-CARD'}

@@ -1,7 +1,8 @@
 // import {useRef, useState, useEffect} from 'react'
-import {useDispatch, useSelector} from "react-redux"
+// import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 // import {action, addCardsToTable, assignCardsToPlayer, turnAllCards} from "../Redux/State/Config"
-import {addCardsToTable} from "../Redux/State/Config"
+// import { addCardsToTable } from "../Redux/State/Config"
 import './App.sass'
 import Player from './Components/Player'
 import Dealer from './Components/Dealer'
@@ -17,7 +18,7 @@ import './styles.sass'
 import { Button } from 'antd'
 
 const GameApp = () => {
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
     const state = useSelector(state => state.game)
     const isPhone = useMediaQuery({ query: '(max-width: 800px)' })
     // const {players, bigBlindIndex, smallBlindIndex} = state
@@ -29,18 +30,15 @@ const GameApp = () => {
     //     dispatch(assignCardsToPlayer())
     // }
 
+    
+
     const positions = getPositions(state.roomSize)
     
     return (
         <>
             <div className={'table-name-container'}>
                 <Button onClick={() => {                    
-                    if( state.tableCards.length < 1 ) {
-                        dispatch(addCardsToTable())
-                        dispatch(addCardsToTable())
-                    }
-                    if( state.tableCards.length < 5 )
-                        dispatch(addCardsToTable())
+                    console.log('table name')
                 }}>
                     {state.tableName}
                 </Button>

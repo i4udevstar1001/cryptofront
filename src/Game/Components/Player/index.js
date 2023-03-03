@@ -105,7 +105,7 @@ const Player = (props) => {
     // const renderNumberAnimation = useRef(true)
     useEffect(() => {
         if (isHisTurn) {
-            const time = 100
+            const time = 150
             intervalID = setInterval(() => {
                 setProgress(prev => prev + 2)
             }, time)
@@ -141,11 +141,11 @@ const Player = (props) => {
                     styles={buildStyles({
                         backgroundColor: variables.colors.bgLight,
                         textColor: 'white',
-                        pathColor: variables.colors.base,
+                        pathColor: item.action?.type === 'FOLD' ? '#777' : variables.colors.base,
                         trailColor: variables.colors.bgDark,
                     })}
                 >
-                    <div>
+                    <div className={item.action?.type === 'FOLD' ? sassStyles.foldType : ''}>
                         {
                             item === null ? "Empty" :
                                 <img src={avatar}
@@ -164,7 +164,9 @@ const Player = (props) => {
                         {
                             item.action && item.action.type && item.action.type !== 'FOLLOW' && (
                                 <>
-                                    <PlayerActions type={item.action.type} flag={!item.action?.flag}/>
+                                    <PlayerActions 
+                                        type={item.action.type} 
+                                        flag={!item.action?.flag} />
                                 </>
                             )
                         }

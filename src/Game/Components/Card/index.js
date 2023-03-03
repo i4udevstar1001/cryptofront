@@ -2,7 +2,6 @@ import styles from './styles.module.sass'
 import {useSpring, animated} from 'react-spring'
 import { useMediaQuery } from 'react-responsive'
 import {useSelector, useDispatch} from "react-redux"
-// import {useEffect} from "react"
 import {stopPerformingAnimation} from "../../../Redux/State/Config";
 
 let renderCount = 0
@@ -55,7 +54,12 @@ const Card = (props) => {
                             <span style={{color}}>{value}</span>
                             <span style={{color}}>{type}</span>
                         </div>
-                        <div className={styles.body} style={{color}}>{type}</div>
+                        {props.cardSmall === true ? (
+                            <div className={styles.cardSmall} style={{color}}>{type}</div>
+                        ) : (
+                            <div className={styles.body} style={{color}}>{type}</div>
+                        )}
+                        
                         <div className={styles.bottom}>
                             <span style={{color}}>{value}</span>
                             <span style={{color}}>{type}</span>

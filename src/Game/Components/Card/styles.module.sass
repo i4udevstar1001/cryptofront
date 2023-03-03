@@ -20,6 +20,23 @@
           font-size: 5px!important
           top: 0!important 
 
+.cardSmall
+  font-size: 18px
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+  @include media('<800px')
+    font-size: 15px!important
+    
+    .bottom, .top
+      span
+        &:first-child
+          font-size: 5px!important
+          top: 0!important
+        &:last-child
+          font-size: 5px!important
+          top: 0!important 
 .top
   display: flex
   flex-direction: column

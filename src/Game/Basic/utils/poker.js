@@ -1,12 +1,5 @@
 import _ from "lodash";
 
-=======
-/*
-Example implementation used in the Think Functional course
-taken from: https://codepen.io/dlivas/pen/mqJwmX
-*/
-
-//
 //  Util Functions
 //
 function deepFreeze(object) {
@@ -34,8 +27,6 @@ const maxInARow = weights =>
 // Playing Cards class definition and implementation
 // in a functional fashion
 //
-const Ranks = Object.freeze(["2","3","4","5","6","7","8","9","10","J","Q","K","A"]);
-=======
 const Ranks = Object.freeze([
   "2",
   "3",

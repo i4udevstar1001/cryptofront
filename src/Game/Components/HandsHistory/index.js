@@ -5,64 +5,68 @@ import Card from '../../Components/Card'
 import arrowLeft from '../../Assets/hands-history-arrow-left.png'
 import arrowRight from '../../Assets/hands-history-arrow-right.png'
 
-   const data = [{player: 'Arian nargesi', id: '00005', win: true, amount: '+$1400', hands: [{
-           type: '♥',
-           value: 3,
-       },
-           {
-               type: '♦',
-               value: 'J',
-           }], cards: [
-            {
-                type: '♥',
-                value: 3,
-            },
-            {
-                type: '♦',
-                value: 2,
-            },
-            {
-                type: '♠',
-                value: 6,
-            },
-            {
-                type: '♣',
-                value: 1,
-            },
-            {
-                type: '♦',
-                value: 'A',
-            },
-        ]},
-       {player: 'Arian nargesi', id: '00005', win: true, amount: '+$1400', hands: [{
-               type: '♥',
-               value: 3,
-           },
-               {
-                   type: '♦',
-                   value: 2,
-               }], cards: [
-               {
-                   type: '♥',
-                   value: 3,
-               },
-               {
-                   type: '♦',
-                   value: 2,
-               },
-               {
-                   type: '♠',
-                   value: 6,
-               },
-               {
-                   type: '♣',
-                   value: 1,
-               },
-               {
-                   type: '♦',
-                   value: 'A',
-               },
-           ]},]
+const data = [
+    { player: 'Arian nargesi', id: '00005', win: true, amount: '+$1400', 
+        hands: [{
+            type: '♥',
+            value: 3,
+        },
+        {
+            type: '♦',
+            value: 'J',
+        }], 
+        cards: [{
+            type: '♥',
+            value: 3,
+        },
+        {
+            type: '♦',
+            value: 2,
+        },
+        {
+            type: '♠',
+            value: 6,
+        },
+        {
+            type: '♣',
+            value: 1,
+        },
+        {
+            type: '♦',
+            value: 'A',
+        },
+    ]},
+    { player: 'Arian nargesi', id: '00005', win: true, amount: '+$1400', 
+        hands: [{
+            type: '♥',
+            value: 3,
+        },
+        {
+            type: '♦',
+            value: 2,
+        }],
+        cards: [{
+            type: '♥',
+            value: 3,
+        },
+        {
+            type: '♦',
+            value: 2,
+        },
+        {
+            type: '♠',
+            value: 6,
+        },
+        {
+            type: '♣',
+            value: 1,
+        },
+        {
+            type: '♦',
+            value: 'A',
+        },
+    ]},
+]
 
 const HandsHistory = (props) => {
     const [currentPage, setCurrentPage] = useState(1)
@@ -78,20 +82,20 @@ const HandsHistory = (props) => {
                 <span>Previous Hand History</span>
             </div>
             <div>
-            {data.map(item => {
+            {data.map((item, itemKey) => {
                 return (
-                    <div className={styles.row}>
+                    <div className={styles.row} key={itemKey}>
                         <div className={styles.left}>
                             <div>
                                 <div className={styles.cards}>
                                     {item.hands.map((card, index) => {
                                         return (
-                                            <div style={{marginLeft: index * 45 + 'px', position: 'relative'}}>
+                                            <div style={{marginLeft: index * 45 + 'px', position: 'relative'}} key={index}>
                                                 <Card
                                                     type={card.type}
                                                     value={card.value}
                                                     back={false}
-                                                    key={index}
+                                                    cardSmall={true}
                                                     noAnimation
                                                 />
                                             </div>
@@ -112,12 +116,12 @@ const HandsHistory = (props) => {
                             <div className={styles.cards}>
                                 {item.cards.map((card, index) => {
                                     return (
-                                        <div style={{marginLeft: index * 45 + 'px', position: 'relative'}}>
+                                        <div style={{marginLeft: index * 45 + 'px', position: 'relative'}} key={index}>
                                             <Card
                                                 type={card.type}
                                                 value={card.value}
                                                 back={false}
-                                                key={index}
+                                                cardSmall={true}
                                                 noAnimation
                                             />
                                         </div>
@@ -131,7 +135,6 @@ const HandsHistory = (props) => {
             </div>
             <div className={styles.bottom}>
                 <img src={arrowLeft} onClick={() => {
-                    console.log('Im working')
                     if(currentPage < maxPage)
                         setCurrentPage(currentPage +1)
                 }} alt=""/>
